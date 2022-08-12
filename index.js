@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const todoRoute = require("./routes/todos");
 const currRoute = require("./routes/curriculum.route")
+const userRoute = require("./routes/users.route")
 require("dotenv").config();
 
 
@@ -14,7 +15,7 @@ app.use(express.json());
 
 app.use("/todos", todoRoute);
 app.use("/curriculum", currRoute);
-
+app.use("/users", userRoute);
 
 
 const mongoUri = process.env['MONGODB_URI'];
