@@ -1,5 +1,4 @@
 const express = require("express");
-const fileUpload = require('express-fileupload');
 const cors = require("cors");
 const mongoose = require("mongoose");
 const todoRoute = require("./routes/todos");
@@ -12,11 +11,6 @@ const app = express();
 app.use(cors());
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
-
-app.use(fileUpload({
-  useTempFiles : true,
-  tempFileDir : './uploads'
-}));
 
 app.use("/todos", todoRoute);
 app.use("/curriculum", currRoute);

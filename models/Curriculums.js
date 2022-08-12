@@ -61,7 +61,11 @@ const CurriculumSchema = mongoose.Schema({
         type: String,
         required: false
     }],
-    cont_ref: [subSchema]
+    cont_ref: [subSchema],
+    image: {
+        public_id: String,
+        secure_url: String
+    }
     
 }, { timestamps:true});
 
